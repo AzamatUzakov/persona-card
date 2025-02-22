@@ -29,6 +29,41 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+
+.modalMainBg {
+
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #2e2e2e70;
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 250px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.closeBtn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  border-radius: 100%;
+  border: 0;
+  background-color: aquamarine;
+  cursor: pointer;
 }

@@ -16,16 +16,38 @@ const users = [
 function App() {
 
   const [selectedUser, setSelectedUser] = useState(null)
+  const [modalOpen, setModalOpen] = useState(false)
+
+
+  const openModal = (user) => {
+    setSelectedUser(user)
+    setModalOpen(true)
+  }
+  const closeModal = () => {
+    setModalOpen(false)
+    setSelectedUser(null)
+  }
 
   return (
 
     <div>
 
+      {modalOpen &&
+        < div className="modalMainBg" >
+          <div className="modal">
+            <button className="closeBtn" onClick={() => closeModal()}>&times;</button>
+            <h1>{selectedUser?.name}</h1>
+            <p>{selectedUser?.age} years old</p>
+          </div>
+
+        </div >}
+
 
       <div className='container'>
 
+
         {users.map((user, inddex) => (
-          < div className="profile-container" key={user.id}>
+          <div className="profile-container" key={user.id} onClick={() => openModal(user)}>
             <h1>{user.name}</h1>
             <p>{user.age}</p>
           </div>
@@ -38,4 +60,7 @@ function App() {
     </div >
   )
 }
+
+
+
 export default App
