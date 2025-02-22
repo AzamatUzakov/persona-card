@@ -1,22 +1,40 @@
 import { useState } from 'react'
 import './App.css'
+const users = [
+  { "id": 1, "name": "Alex Adams", "age": 23 },
+  { "id": 2, "name": "John Doe", "age": 25 },
+  { "id": 3, "name": "Emily Smith", "age": 22 },
+  { "id": 4, "name": "Michael Brown", "age": 30 },
+  { "id": 5, "name": "Sarah Johnson", "age": 27 },
+  { "id": 6, "name": "David Williams", "age": 24 },
+  { "id": 7, "name": "Laura Miller", "age": 26 },
+  { "id": 8, "name": "James Taylor", "age": 29 },
+  { "id": 9, "name": "Sophia Davis", "age": 21 },
+  { "id": 10, "name": "Daniel Moore", "age": 28 }
+]
 
 function App() {
-  const [val, setValue] = useState({
-    count: 0,
-    text: ""
-  })
-console.log(val);
+
+  const [selectedUser, setSelectedUser] = useState(null)
 
   return (
-    <div>
-      <button
-        onClick={() => setValue({ ...val, count: val.count + 1 })}> +</button >
-      {val.count}
 
-      <button
-        onClick={() => setValue({ count: val.count   - 1 })}
-      >-</button>
+    <div>
+
+
+      <div className='container'>
+
+        {users.map((user, inddex) => (
+          < div className="profile-container" key={user.id}>
+            <h1>{user.name}</h1>
+            <p>{user.age}</p>
+          </div>
+        ))
+
+        }
+
+
+      </div>
     </div >
   )
 }
