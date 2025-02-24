@@ -32,7 +32,7 @@ function App() {
       {modalSelector &&
         <div className="modalMainBg">
           <div className="modal">
-            <span className="closeBtn" onClick={() => { closeModal() }}>&times;</span>
+            <span className="closeBtn" onClick={() =>  closeModal()}>&times;</span>
             <h1>{userSelector?.name}</h1>
             <p><b>{userSelector?.age}</b> years old</p>
           </div>
