@@ -50,7 +50,6 @@ body {
   background-color: #2e2e2e70;
   backdrop-filter: blur(10px);
 }
-
 .modal {
   background-color: #ffffff;
   border-radius: 10px;
@@ -62,6 +61,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 1;
   animation: slideDown 0.5s forwards;
 }
 
@@ -71,11 +71,12 @@ body {
 
 .closeBtn {
   position: absolute;
-  top: 1%;
-  right: 1%;
-  font-size: 30px;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
   border: 0;
   cursor: pointer;
+  background: none;
 }
 
 @keyframes slideDown {

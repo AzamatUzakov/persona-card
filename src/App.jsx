@@ -43,7 +43,7 @@ function App() {
           <div className="profile-container" key={user.id} onClick={() => openModal(user)
           }>
             <h1>{user.name}</h1>
-            <p> {user.age} years old</p>
+            <p> <b>{user.age}</b> years old</p>
           </div>
         ))}
 
