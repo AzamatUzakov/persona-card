@@ -34,7 +34,7 @@ function App() {
           <div className="modal">
             <span className="closeBtn" onClick={() => { closeModal() }}>&times;</span>
             <h1>{userSelector?.name}</h1>
-            <p>{userSelector?.age}years old</p>
+            <p><b>{userSelector?.age}</b> years old</p>
           </div>
         </div>
       }
