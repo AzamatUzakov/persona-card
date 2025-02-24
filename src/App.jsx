@@ -14,47 +14,38 @@ const users = [
 ]
 
 function App() {
-
-  const [selectedUser, setSelectedUser] = useState(null)
-  const [modalOpen, setModalOpen] = useState(false)
-
+  const [user, setUser] = useState(null)
+  const [modal, setModal] = useState(false)
 
   const openModal = (user) => {
-    setSelectedUser(user)
-    setModalOpen(true)
+    setUser(user)
+    setModal(true)
   }
   const closeModal = () => {
-    setModalOpen(false)
-    setSelectedUser(null)
+    setUser(null)
+    setModal(false)
   }
 
   return (
 
     <div>
+      {modal && <div className="modalMainBg">
+        <div className="modal">
+          <span className="closeBtn" onClick={() => closeModal()} >&times;</span>
+          <h1>{user?.name}</h1>
+          <p><b>{user?.age}</b> years old</p>
+        </div>
+      </div>
 
-      {modalOpen &&
-        < div className="modalMainBg" >
-          <div className="modal">
-            <span className="closeBtn" onClick={() => closeModal()}>&times;</span>
-            <h1>{selectedUser?.name}</h1>
-            <p>{selectedUser?.age} years old</p>
-          </div>
+      }  <div className='container'>
+        {users.map((user, indx) => (
 
-        </div >}
-
-
-      <div className='container'>
-
-
-        {users.map((user, inddex) => (
-          <div className="profile-container" key={user.id} onClick={() => openModal(user)}>
+          <div className="profile-container" key={user.id} onClick={() => openModal(user)
+          }>
             <h1>{user.name}</h1>
             <p> {user.age} years old</p>
           </div>
-        ))
-
-        }
-
+        ))}
 
       </div>
     </div >
